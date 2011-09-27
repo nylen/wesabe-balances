@@ -102,24 +102,26 @@ while($row = mysql_fetch_assoc($result)) {
   $updated_at = date('n/d/Y g:i:s a', strtotime("$row[updated_at] UTC"));
 
   echo <<<HTML
-    <table class="account">
-      <tr>
-        <td class="description">Account:</td>
-        <td class="content">$row[name]</td>
-      </tr>
-      <tr>
-        <td class="description">Type:</td>
-        <td class="content">$type</td>
-      </tr>
-      <tr>
-        <td class="description">Balance:</td>
-        <td class="content">\$$balance</td>
-      </tr>
-      <tr>
-        <td class="description">As of:</td>
-        <td class="content">$updated_at</td>
-      </tr>
-    </table>
+    <div class="account">
+      <table>
+        <tr>
+          <td class="description">Account:</td>
+          <td class="content">$row[name]</td>
+        </tr>
+        <tr>
+          <td class="description">Type:</td>
+          <td class="content">$type</td>
+        </tr>
+        <tr>
+          <td class="description">Balance:</td>
+          <td class="content">\$$balance</td>
+        </tr>
+        <tr>
+          <td class="description">As of:</td>
+          <td class="content">$updated_at</td>
+        </tr>
+      </table>
+    </div>
 
 HTML;
 }
